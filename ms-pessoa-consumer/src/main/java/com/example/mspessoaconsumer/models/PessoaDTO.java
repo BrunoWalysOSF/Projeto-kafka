@@ -1,4 +1,4 @@
-package com.example.mspessoaproducer.models;
+package com.example.mspessoaconsumer.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Pessoa implements Serializable {
+public class PessoaDTO implements Serializable {
 
     private String nome;
     private int idade;

@@ -45,7 +45,7 @@ services:
       MYSQL_USER: user
       MYSQL_ROOT_PASSWORD: root
       MYSQL_PASSWORD: root
-      MYSQL_DATABASE: CAIXA
+      MYSQL_DATABASE: caixa
     volumes:
       - my-db:/var/lib/mysql
     ports:

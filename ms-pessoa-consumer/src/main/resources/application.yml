@@ -5,7 +5,7 @@ spring:
     producer:
       bootstrap-servers: localhost:29092
   datasource:
-    url: jdbc:mysql://localhost:3306/CAIXA?useSSL=false
+    url: jdbc:mysql://localhost:3306/caixa?useSSL=false
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver

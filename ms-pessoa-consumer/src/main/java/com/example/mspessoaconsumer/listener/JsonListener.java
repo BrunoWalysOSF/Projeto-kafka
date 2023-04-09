@@ -1,6 +1,6 @@
 package com.example.mspessoaconsumer.listener;
 
-import com.example.mspessoaconsumer.models.Pessoa;
+import com.example.mspessoaconsumer.models.PessoaDTO;
 import com.example.mspessoaconsumer.service.PessoaService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class JsonListener {
     private PessoaService pessoaService;
 
     @KafkaListener(topics = "ms-producer", groupId = "group-1", containerFactory = "jsonContainerFactory")
-    public void received(@Payload Pessoa pessoa){
+    public void received(@Payload PessoaDTO pessoa){
         log.info("Recebendo pessoa nome : " + pessoa.getNome());
         pessoaService.savePessoa(pessoa);
 

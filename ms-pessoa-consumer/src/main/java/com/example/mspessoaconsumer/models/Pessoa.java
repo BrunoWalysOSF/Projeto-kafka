@@ -4,19 +4,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Pessoa implements Serializable {
+@Entity
+@Table(name = "Pessoa")
+public class Pessoa {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nome;
     private int idade;
     private String endereco;
     private String sexo;
     private String estadoCivil;
     private String cpf;
-
 
 }

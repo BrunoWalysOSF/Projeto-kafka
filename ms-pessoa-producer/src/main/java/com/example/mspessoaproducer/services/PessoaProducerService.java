@@ -1,6 +1,6 @@
 package com.example.mspessoaproducer.services;
 
-import com.example.mspessoaproducer.models.Pessoa;
+import com.example.mspessoaproducer.models.PessoaDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -15,7 +15,7 @@ public class PessoaProducerService {
 
     private final KafkaTemplate<String, Serializable> kafkaTemplate;
 
-    public void sendPessoa(Pessoa pessoa){
+    public void sendPessoa(PessoaDTO pessoa){
         log.info("Enviando : " + pessoa.getNome());
         kafkaTemplate.send("ms-producer", pessoa);
 
